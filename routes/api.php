@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,9 +10,12 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::group(['prefix'=>'products'], function(){
+Route::apiResources([
+    'products' => ProductController::class,
+]);
+
+Route::group(['prefix'=>'products'], function(){
     Route::apiResources([
-        'products' => ProductController::class,
-       
+        '/{product}/reviews' => ReviewController::class,
     ]);
-// });
+});
