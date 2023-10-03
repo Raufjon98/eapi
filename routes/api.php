@@ -14,6 +14,12 @@ Route::apiResources([
     'products' => ProductController::class,
 ]);
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+Route::apiResource('/products', ProductController::class); 
 Route::group(['prefix'=>'products'], function(){
     Route::apiResources([
         '/{product}/reviews' => ReviewController::class,

@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProductRequest extends FormRequest
+class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +13,7 @@ class UpdateProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +24,11 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'sometimes|required|max:255|unique:products',
+            'description' => 'sometimes|required',
+            'price' => 'sometimes|required|max:10',
+            'stock' => 'sometimes|required|max:6',
+            'discount' => 'sometimes|required|max:2'
         ];
     }
 }
