@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "7b3df324-836d-4ac1-b578-bbe627a68f36",
+		"name": "EAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21235865"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://eapi/api/products",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://eapi/api/products/405",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"405"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Iphone X\",\r\n    \"description\" : \"created at 04.10\",\r\n    \"stock\" : \"500\", \r\n    \"price\" : \"1500\",\r\n    \"discount\" : \"50\",\r\n    \"user_id\" : 11\r\n}"
+						},
+						"url": {
+							"raw": "http://eapi/api/products",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"description\" : \"This is 11th product!\"\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://eapi/api/products/11",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://eapi/api/products/15",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Review all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://eapi/api/products/4/reviews",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"4",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://eapi/api/products/11/reviews",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"11",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\" : \"Andrew\",\r\n    \"star\" : \"4\",\r\n    \"review\" : \"handmade review\" \r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://eapi/api/products/11/reviews",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"11",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\" : \"Andrew\",\r\n    \"star\" : \"4\",\r\n    \"review\" : \"handmade review Updated version\" \r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://eapi/api/products/11/reviews/298",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"11",
+								"reviews",
+								"298"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{eauth}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://eapi/api/products/11/reviews/32 ",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"products",
+								"11",
+								"reviews",
+								"32 "
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OAuth",
+			"item": [
+				{
+					"name": "Get token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grant_type\" : \"password\",\r\n    \"client_id\" : \"2\",\r\n    \"client_secret\" : \"1cTOeT9zEIZzZyBi6xPVc5NS1hUh0yBgESLYCUZs\",\r\n    \"username\" : \"korbin74@example.com\",\r\n    \"password\" : \"secret\",\r\n    \"scope\" : \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://eapi/oauth/token",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get oauth user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzQ1OWI5NzY0ZmQ2M2E3NDkzMDViZDdiMTcxYjEwMWVjYTQyMGI0OGM4OGY3YjQ4YWY1Njk2ZGNjMjU1OGE2NjAzYjgzMGUyODEyOTg1ZDEiLCJpYXQiOjE2OTYzMjA4NzQuNTYyMjUzLCJuYmYiOjE2OTYzMjA4NzQuNTYyMjU3LCJleHAiOjE3Mjc5NDMyNzQuNTEzNTkxLCJzdWIiOiIxMiIsInNjb3BlcyI6W119.Cizerwy02ZJt5MjBZLFwRJr1-wEltUrkpYeukUVL1Og3shOF6HxHYGD4jdHqeO_X6CeV6Q6gVZdVmDXXboNWu5mKdUUsuCKmm8PXLzrlKYvneb7lSIKeHz5j7LDxW0KX_9yRXcud_z2sOHyIbpQkBdbOUbRBfYjb2TI_mXCjJUPV30pN6z1mmhdqkTvYN1L7cj9pqDGb4JIPFJ3Su8X17RcFcm6E0EhpM9QJtB9cYkBKa25Rs_8m0c__L3b2lGwo3ChRT_kmADscpCnoADK56vGINJeR1QbjT9N0LoMaZibK6qoul82SXsEOXmf4_YXS8dvWpUqBDZXwnC8JEiNWZsczeYbYEVuRauJNzcTRwTrVkwBBY-3Ya9ZaaC-D7xYxhfn5LRj2sIUV2o6J1XI2tR1ShgA0120MzECfW4oNOMVLXwpJ4-HxZsh9kQaQBRgksqY0xMQhPMaCnvFzGGWjzcGb_Vny7j0vgCZSVE6UMh9mItUkP-hsvOf_ABE3dSOyL6h0FPng4UCudaDd67gPzGGr0Tqmi_e8TfRLr0w-L1BqDwQ3cj9obtYyt5STDWEjxdggQ3q_YJG6aI5UfumTGimKNHvP_g_7zSikEt-nUffBeuW-w1ILmO2qYNb4RSeYid10c5ywIU5_Lyi_ock13eBsVEINFGJz27zZBfLbo3I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://eapi/api/user",
+							"protocol": "http",
+							"host": [
+								"eapi"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
